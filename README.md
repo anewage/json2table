@@ -1,4 +1,4 @@
-# JSON2CSV For Anton
+# JSON2Table
 Run the following:
 ```bash
 npm install
