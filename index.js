@@ -54,7 +54,7 @@ else {
             }
 
             // Add other fields that are in array format
-            row['curies'] = JSON.stringify(datapoint._links.curies)
+            row['links_curies'] = JSON.stringify(datapoint._links.curies)
             row['authors'] = JSON.stringify(datapoint.authors)
             row['keywords'] = JSON.stringify(datapoint.keywords)
             row['locations'] = JSON.stringify(datapoint.locations)
@@ -67,6 +67,7 @@ else {
     console.log("> Writing the output to " + outputFilename + "\n")
     try {
         const opts = { fields: Object.keys(dataset[0]) }
+        console.log(opts)
         const parser = new Parser(opts)
         const csv = parser.parse(dataset)
         fs.writeFile(outputFilename, csv, function (err) {
